@@ -1,0 +1,11 @@
+openai-whisper
+langchain
+langchain-openai
+fastapi
+uvicorn
+python-multipart
+pydantic
+gtts
+ffmpeg-python
+gradio
+python-dotenv
