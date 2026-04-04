@@ -13,7 +13,7 @@ from pathlib import Path
 
 from faster_whisper import WhisperModel
 
-from app.schemas import TranscribeResponse, SegmentModel
+from src.schemas import TranscribeResponse, SegmentModel
 
 log = logging.getLogger(__name__)
 
@@ -25,11 +25,11 @@ class WhisperASR:
         log.info(f"Loading Whisper '{model_size}' ...")
         self.model = WhisperModel(
             model_size,
-            device="cpu",
+            device="auto",
             compute_type="int8",
         )
         self.model_size = model_size
-        self.device = "cpu"
+        self.device = "auto"
         log.info(f"Whisper '{model_size}' ready.")
 
     def transcribe(self, audio_path: str | Path) -> TranscribeResponse:
